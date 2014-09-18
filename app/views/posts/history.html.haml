@@ -1,0 +1,38 @@
+- provide(:title, 'Post History')
+.container
+  %h1 History
+  = will_paginate @versions, renderer: BootstrapPagination::Rails
+  %table.table.table-striped.table-hover
+    %thead
+      %tr
+        %th Event ID
+        %th Target
+        %th Action
+        %th Whodunnit
+        %th When
+        %th More
+    %tbody
+    -@versions.each do |version|
+      %tr
+        %td
+          =version.id
+        %td
+          =version.item_type
+        %td
+          =version.event
+        %td
+          - user = User.find_by_id(version.whodunnit)
+          - unless user.nil?
+            = link_to user.email, edit_user_registration_path(user)
+            = '(last seen at ' + l(user.last_sign_in_at, format: '%m.%-d.%Y %H:%M:%S') + ')'
+        %td
+          =l(version.created_at, format: '%m.%-d.%Y %H:%M:%S %Z')
+        %td
+          =link_to 'raw', '#', tabindex: 0, class: 'btn btn-default', data: {toggle: 'popover', placement: 'left', trigger: 'focus', content: version.object}
+
+
+
+:javascript
+  $(function() {
+      $('.btn').popover();
+  });

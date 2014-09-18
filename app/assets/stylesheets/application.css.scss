@@ -1,0 +1,53 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+/* override bootstrap SASS variables - must appear BEFORE @import 'bootstrap'; */
+$body-bg: #F3F3F3;
+//$navbar-default-bg: #aedae5;
+$button-green: #29B279;
+$pill:   #C1C1C1;
+
+/* Lato font is similar to FF Meta Web Pro (appears to be the mockup font) */
+$font-family-base: Lato;
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+
+//
+//.navbar-right-links a:not(:last-child){
+//  margin-right:20px;
+//}
+//
+//.navbar-right-links a.btn{
+//   background-color:rgb(86, 170, 120);
+//   color:white;
+//   border:none;
+// }
+//
+//.navbar{
+//	border-bottom: 1px #444444 solid;
+//	margin-bottom: 10px;
+//	background-color:black;
+//}
+//
+//.nav-pills > li.active > a, .nav-pills > li.active > a:hover  {
+//  background-color:#9c9c9c;
+//}
+//
+//.nav-pills > li > a {
+//  border-radius:30px;
+//}
