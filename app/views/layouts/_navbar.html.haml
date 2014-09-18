@@ -48,10 +48,15 @@
           %b.caret
         %ul.dropdown-menu
           %li
-            = link_to 'My Profile', edit_user_registration_path(current_user)
-          %li.divider
-          %li
-            = link_to 'Sign Out', destroy_user_session_path, :method => :delete
+            -if user_signed_in?
+              = link_to 'My Profile', edit_user_registration_path(current_user)
+              %li.divider
+              %li
+                = link_to 'Sign Out', destroy_user_session_path, :method => :delete
+            -else
+              = link_to 'Create Account', new_user_registration_path
+              = link_to 'Sign In', new_user_session_path
+
 
 
 -#.navbar.navbar-default{role:"navigation"}
