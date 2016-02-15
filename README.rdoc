@@ -1,7 +1,10 @@
 == README
-This is a basic Rails app based on a simple Post model (title, body).
-Changes to models can be undone/redone (check the flash messages).
+This is a basic blog that has a Post model.
+Users can undo/redo changes to the model (check the flash messages).
 
+
+
+== NOTES
 The seed file will generate a few sample Posts.
 
 * Ruby version
